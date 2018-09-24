@@ -17,15 +17,15 @@ We're going to be writing a shell script.  First, though... let's figure out wha
 
 What command did you use, and what was its output?
 ----------
-
-
+date
+Mon Sep 24 14:37:15 EDT 2018
 
 ==========
 2. Print out a calendar for this month.
 
 What command did you use, and what was its output?
 ----------
-
+cal
 
 
 ==========
@@ -33,15 +33,16 @@ What command did you use, and what was its output?
 
 What commands did you use to do this?
 ----------
-
-
+cd ~
+pwd
 
 ==========
 4. Create an empty file called copy_to_backup.sh.  Verify that the file exists.
 
 What commands did you use to do this?
 ----------
-
+touch copy_to_backup.sh
+ls -a
 
 
 ==========
@@ -49,7 +50,7 @@ What commands did you use to do this?
 
 What command did you use to find the permissions?
 ----------
-
+ls -l copy_to_backup.sh 
 
 
 ==========
@@ -57,7 +58,9 @@ What command did you use to find the permissions?
 
 What commands did you use to do this?  What was the output?
 ----------
-
+chmod u+x copy_to_backup.sh
+ls -l copy_to_backup.sh
+-rwxr--r--  1 student  staff  0 Sep 24 15:00 copy_to_backup.sh
 
 
 ==========
@@ -67,7 +70,8 @@ $ ./copy_to_backup.sh
 
 What command did you use to try to execute the file?  What happens?
 ----------
-
+./copy_to_backup.sh
+Nothing happens
 
 
 ==========
@@ -75,7 +79,7 @@ What command did you use to try to execute the file?  What happens?
 
 What command did you use to do this?
 ----------
-
+nano copy_to_backup.sh
 
 
 ==========
@@ -87,26 +91,30 @@ c. print out "I'm done backing up"
 
 Write out the code in your file below...
 ----------
-
-
+#!/bin/bash
+mkdir -p backup
+cp *.txt backup
+echo "I'm done backing up"
 
 ==========
 10. Create a directory in your home called test
 ----------
+mkdir test
 ==========
 11. Go into that directory and create two empty files... 1.txt and 2.txt
 
 What commands did you use to do this?
 ----------
-
-
+cd test
+touch 1.txt
+touch 2.txt
 
 ==========
 12. Move the script that you created into this directory.
 
 What commands did you use to do this?
 ----------
-
+mv *.txt test
 
 
 ==========
@@ -114,7 +122,7 @@ What commands did you use to do this?
 
 What commands did you use to do this?
 ----------
-
+./copy_to_backup.sh
 
 
 ==========
@@ -122,3 +130,5 @@ What commands did you use to do this?
 
 What commands did you use to do this?  Show the output.
 ----------
+ls
+1.txt	2.txt backup copy_to_backup.sh
